@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Upload File";
+}
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">
+        <strong>Success!</strong> @ViewBag.Message
+    </div>
+}
+<h2>Upload Files here...</h2>
+@using (Html.BeginForm("Index", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div>
+        @Html.TextBox("file", "", new { type = "file" }) <br />
+
+        <input type="submit" value="Upload" />
+
+    </div>
+
+
+}  
